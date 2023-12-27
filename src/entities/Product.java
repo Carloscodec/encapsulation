@@ -2,8 +2,8 @@ package entities;
 
 public class Product {
 
-	public String name;
-	public double price;
+	private String name;
+	private double price;
 	public int quantity;
 	
 	public Product(String name, double price, int quantity) {
@@ -17,6 +17,26 @@ public class Product {
 		this.price = price;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+
 	public double totalValueInStock() {
 		return price * quantity;
 	}
@@ -31,9 +51,9 @@ public class Product {
 	
 	
 	public String toString() {
-		return "Product: " + name + ", price: $"
-				+ String.format("%.2f", price)
-				+ ", quantity: " + quantity
+		return "Product: " + getName() + ", price: $"
+				+ String.format("%.2f", getPrice())
+				+ ", quantity: " + getQuantity()
 				+ ", Total: $"
 				+ String.format("%.2f", totalValueInStock());
 	}
